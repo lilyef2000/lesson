@@ -1,0 +1,93 @@
+import tab
+import tab
+import sys
+sys.path
+sys.path.append('/home/antenna')
+sys.path
+import tab
+import tab
+import tab
+import sys
+sys.
+sys.version
+sys.s
+quit
+sys.
+file('worker.txt')
+file('workers.txt')
+c=file('workers.txt')
+c.readline()
+while True:
+    line = c.readline()
+    
+while True:
+    line = c.readline()
+    print line
+while True:
+    line = c.readline()
+len(c.readline())
+c=file('workers.txt')
+len(c.readline())
+c=file('workers.txt')
+len(c.readline())
+c=file('workers.txt')
+while True:
+    line = c.readline()
+    print line
+    if len(line) == 0
+    if len(line) == 0:
+    if len(line) == 0:break
+while True:
+    line = c.readline()
+    if len(line) == 0:break
+    print line
+c.clese()
+c.close()
+f=file('antenna.txt','w')
+f.write('hello,this is my file.')
+f.close()
+f.file('antenna.txt','w')
+f=file('antenna.txt','w')
+f.write('This is the first line.')
+print f.readline()
+f.close()
+f=file('antenna.txt')
+print f.readline()
+f.close()
+f=file('antenna.txt','w')
+f.write('This is the first line.')
+f.write('\nThis is the second line.\n')
+f.close
+f.close()
+f=file('antenna.txt','w')
+f.write('\nThis is the third line.\n')
+f.flush()
+f=file('antenna.txt','w')
+f.write('\nThis is the third line.\n')
+f.write('\nThis is the second line.\n')
+f.write('This is the first line.')
+f.close()
+f=file('antenna.txt','w')
+f.write('This is the first line.')
+f.flush()
+f.write('\nThis is the second line.\n')
+f.flush()
+f.write('\nThis is the third line.\n')
+f.flush()
+f.close()
+f=file('antenna.txt','w')
+f.write('This is the first line.\n')
+f.write('This is the second line.\n')
+f.write('This is the third line.\n')
+f.flush()
+f.close()
+f=file('antenna.txt','a')
+f.write('After close this file,I open it and append this line.\n')
+f.flush
+f.flush()
+f.close()
+quit
+contract.py
+contract
+quit
+quit()
