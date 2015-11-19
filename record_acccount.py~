@@ -45,6 +45,6 @@ print account_list
 # logger.record_log('1000000001',500,'Adidas')
 
 if recon('1000000001',800,'Withdraw'):
-	logger.record_log('1000000001',800,'Withdraw',intrest)
+	logger.record_log('1000000001',0,'Withdraw failure!',0)
 else:
-	logger.record_log('1000000001',0,'Withdraw failure!!!',0)
+	logger.record_log('1000000001',800,'Withdraw',intrest)
