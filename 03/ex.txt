@@ -1,0 +1,3 @@
+/home/Administrator/lesson/03/acc_load.py
+/home/Administrator/lesson/03/acc_dump.py
+/home/Administtrator/lesson/03/tab.py
