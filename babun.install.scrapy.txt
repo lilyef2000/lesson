@@ -1,0 +1,12 @@
+The installation steps assume that you have the following things installed:
+
+1.Python 2.7
+2.pip and setuptools Python packages. Nowadays pip requires and installs setuptools if not installed.
+3.lxml. aost Linux distributions ships prepackaged versions of lxml. Otherwise refer to http://lxml.de/installation.html
+4.OpenSSL. This comes preinstalled in all operating systems, except Windows where the Python installer ships it bundled.
+
+¿¿¿¿¿¿¿¿¿
+
+1.pact update python
+2.wget https://bootstrap.pypa.io/ez_setup.py -O - | sudo python
+
