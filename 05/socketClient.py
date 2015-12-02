@@ -2,7 +2,7 @@
 import socket
 import time
 
-host = '192.168.1.7'
+host = '192.168.56.1'
 port = 18000
 s = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 s.connect((host,port))
@@ -10,8 +10,8 @@ s.connect((host,port))
 while 1:
     INPUT = raw_input("Input your cmd:")
     s.send(INPUT)
-    received_data = s.recv(1024)
+    received_data = s.recv(8196)
     
-    print 'Received from server:',received_data,'on',time.strftime('%y/%m/%d %H:%M:%S')
+    print 'Received from server:\n',received_data,'\non',time.strftime('%y/%m/%d %H:%M:%S')
 
 s.close()
