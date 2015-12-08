@@ -1,0 +1,10 @@
+cp /etc/skel/.bashrc ~/.bashrc拷贝原版
+
+显示颜色
+在~/.bashrc最后一行加上
+
+TERM=xterm-color
+
+保存退出，
+执行
+source .bashrc
