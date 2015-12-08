@@ -2,7 +2,7 @@
 import socket
 import time
 
-host = '192.168.1.201'
+host = '192.168.1.202'
 port = 18000
 s = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 s.connect((host,port))
