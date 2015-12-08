@@ -9,13 +9,14 @@ class myTCPHandler(SocketServer.BaseRequestHandler):
         print "got connection fron:",self.client_address
         while 1:
             self.data = self.request.recv(8196)
-            if not data:
+            if not self.data:
                 print "connection lost:",self.client_address
                 time.sleep(1)
                 break
             else:
                 print "will run this on server:",self.data,"on",time.strftime('%H:%M:%S')
                 cmd = os.popen(self.data)
+                result = cmd.read()
                 if result == '':
                     result = 'cmd error!!!'
                 else:
