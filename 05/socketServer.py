@@ -4,7 +4,7 @@ import time
 import os
 
 host = ''
-port = 20000
+port = 18000
 s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 s.bind((host,port))
 s.listen(2)
