@@ -12,6 +12,6 @@ class myTCPHandler(SocketServer.BaseRequestHandler):
             self.request.sendall(format_data.upper())
 
 h,p = '',9999
-server = SocketServer.TCPServer((h,p),myTCPHandler)
+server = SocketServer.ThreadingTCPServer((h,p),myTCPHandler)
 
 server.serve_forever()
