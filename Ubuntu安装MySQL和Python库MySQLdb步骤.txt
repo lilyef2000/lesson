@@ -1,0 +1,24 @@
+Ubuntu安装MySQL和Python库MySQLdb步骤
+2015-05-06      0 个评论    来源：Adoryn Homepage   收藏     我要投稿
+一、安装MySQL服务器和客户端
+
+执行以下命令：
+
+sudo apt-get install mysql-server-5.6 mysql-client-5.6
+sudo apt-get install libmysqlclient-dev libmysqld-dev
+
+二、Python安装MySQLdb库
+
+执行以下命令：
+
+sudo apt-get install python-pip
+sudo apt-get install python-dev
+sudo pip install mysql-python
+
+验证方法：
+
+进入Python命令行界面：
+import MySQLdb
+未报错即表示安装成功
+
+P.S. 可使用 “apt-cache search 包名” 来查询安装包全名。
