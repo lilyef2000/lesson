@@ -75,9 +75,8 @@ class MyRequestHandler(SocketServer.BaseRequestHandler):
                             print 'ready to send file to client %s .' % self.client_address[0]
                             SendToClient(filename)
                     
-                    elif re_msg == 'help' or re_msg == '?'
-                        help_msg = '''\033[32;1m\nhelp\nget filename\tget file from FTP server \nsend filename\tsend file 
-                        to FTP server\nls\t\tshow file list on FTP server\033[0m'''
+                    elif re_msg == 'help' or re_msg == '?':
+                        help_msg = '''\033[32;1m\nhelp\nget filename\tget file from FTP server \nsend filename\tsend file to FTP server\nls\t\tshow file list on FTP server\033[0m'''
                         self.request.send(help_msg)
                     
                     elif re_msg == 'ls':
@@ -103,5 +102,5 @@ try:
     tcpServ = SocketServer.ThreadingTCPServer(ADDR,MyRequestHandler)
     print 'waiting for connection...'
     tcpServ.serve_forever()
-except sock.error,e:
+except socket.error,e:
     print 'socket error happend!'

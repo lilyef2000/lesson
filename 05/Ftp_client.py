@@ -5,7 +5,7 @@ from time import sleep
 import user_startup
 from socket import *
 
-HOST = '192.168.1.202'
+HOST = '192.168.1.200'
 PORT = 21567
 BUFSIZ = 4096
 ADDR = (HOST,PORT)
@@ -40,7 +40,7 @@ while 1:
     if data == 'get' or data == 'send':
         print '\033[31;1mNo file specified,use %s filename \033[0m' % data
         continue
-    if data == 'ls'
+    if data == 'ls':
         tcpCliSock.send(data)
         file_list = tcpCliSock.recv(8096)
         print file_list
@@ -63,7 +63,11 @@ while 1:
             print 'file sent finished!'
             sleep(0.5)
             tcpCliSock.send('file_send_done')
-
+    if data.split()[0] == 'get':
+        tcpCliSock.send(data)
+        print 'send msg:',data
+        #tcpCliSock.send('%s\r\n' % data)
+        recv_data = tcpCliSock.recv(BUFSIZ)
         if recv_data == 'ok2get':
             file2get = "test/%s" % data.split()[1]
             f = file(file2get,'wb')
@@ -82,6 +86,14 @@ while 1:
             else:
                 print 'wrong'
                 print 'File %s receive done!' % filename
-        else:
-            #print 'invalid cmd...'
-            print 'FTP server:',recv_data
+    if data == 'help' or data == '?':
+        tcpCliSock.send(data)
+        help_msg = tcpCliSock.recv(8096)
+        print help_msg
+ 
+    else:
+        #print 'invalid cmd...'
+        tcpCliSock.send(data)
+        error_msg = tcpCliSock.recv(8096)
+        print 'FTP server:',error_msg
+
