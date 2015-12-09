@@ -9,7 +9,7 @@ s.connect((host,port))
 
 while 1:
     INPUT = raw_input("Input:")
-    s.send(INPUT)
+    s.send(INPUT.strip())
     received_data = s.recv(8196)
     
     print 'Received from server:\n',received_data,'\non',time.strftime('%y/%m/%d %H:%M:%S')

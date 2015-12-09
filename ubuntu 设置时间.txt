@@ -1,0 +1,7 @@
+新配置的服务器用的是ubuntu server e文版的，简单配完时间居然没改time zone，用了一段时间，发现server端svn的时间和客户端显示的时间不一致，总是快12个小时。。。
+date看了下时间发现时EDT时间，然后用以下方法改成了CST时间。
+
+cp /usr/share/zoneinfo/Asia/Shanghai  /etc/localtime
+将时间改为cst时间
+
+date -s xx:xx:xx 设置系统时间即可。

@@ -14,14 +14,13 @@ class myTCPHandler(SocketServer.BaseRequestHandler):
                 time.sleep(1)
                 break
             else:
-                print "will run this on server:",self.data,"on",time.strftime('%H:%M:%S')
-                cmd = os.popen(self.data)
+                print "will run \033[32;1m%s:%s\033[0m on server:" %(self.client_address,self.data),"on",time.strftime('%H:%M:%S')
+                cmd = os.popen(self.data.strip())
                 result = cmd.read()
                 if result == '':
                     result = 'cmd error!!!'
-                else:
-                    result = "\033[32;1m%s \033[0m" %self.data
-                self.request.sendall(result.upper())
+                result = "\033[32;1m%s\033[0m" %result
+                self.request.sendall(result)
 
 h,p = '',9999
 server = SocketServer.ThreadingTCPServer((h,p),myTCPHandler)
