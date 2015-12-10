@@ -3,6 +3,7 @@
 import SocketServer
 import os
 from time import ctime,sleep
+import socket
 
 HOST = ''
 PORT = 21567
@@ -102,5 +103,5 @@ try:
     tcpServ = SocketServer.ThreadingTCPServer(ADDR,MyRequestHandler)
     print 'waiting for connection...'
     tcpServ.serve_forever()
-except tcpServ.error,e:
+except socket.error,e:
     print 'socket error happend!'
