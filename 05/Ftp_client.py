@@ -5,7 +5,7 @@ from time import sleep
 import user_startup
 from socket import *
 
-HOST = '192.168.1.200'
+HOST = '192.168.1.202'
 PORT = 21567
 BUFSIZ = 4096
 ADDR = (HOST,PORT)
@@ -34,17 +34,17 @@ while 1:
     data = raw_input('ftp> ').strip()
     if len(data) == 0:
         continue
-    if data == 'quit':
+    elif data == 'quit':
         tcpCliSock.close()
         break
-    if data == 'get' or data == 'send':
+    elif data == 'get' or data == 'send':
         print '\033[31;1mNo file specified,use %s filename \033[0m' % data
         continue
-    if data == 'ls':
+    elif data == 'ls':
         tcpCliSock.send(data)
         file_list = tcpCliSock.recv(8096)
         print file_list
-    if data.split()[0] == 'send':
+    elif data.split()[0] == 'send':
         try:
             os.stat(data.split()[1])
         except OSError:
@@ -63,13 +63,13 @@ while 1:
             print 'file sent finished!'
             sleep(0.5)
             tcpCliSock.send('file_send_done')
-    if data.split()[0] == 'get':
+    elif data.split()[0] == 'get':
         tcpCliSock.send(data)
         print 'send msg:',data
         #tcpCliSock.send('%s\r\n' % data)
         recv_data = tcpCliSock.recv(BUFSIZ)
         if recv_data == 'ok2get':
-            file2get = "test/%s" % data.split()[1]
+            file2get = "%s" % data.split()[1]
             f = file(file2get,'wb')
             file_get_done_mark = 0
             while 1:
@@ -86,7 +86,7 @@ while 1:
             else:
                 print 'wrong'
                 print 'File %s receive done!' % filename
-    if data == 'help' or data == '?':
+    elif data == 'help' or data == '?':
         tcpCliSock.send(data)
         help_msg = tcpCliSock.recv(8096)
         print help_msg

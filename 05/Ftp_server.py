@@ -102,5 +102,5 @@ try:
     tcpServ = SocketServer.ThreadingTCPServer(ADDR,MyRequestHandler)
     print 'waiting for connection...'
     tcpServ.serve_forever()
-except socket.error,e:
+except tcpServ.error,e:
     print 'socket error happend!'
