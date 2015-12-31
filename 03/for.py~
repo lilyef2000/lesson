@@ -1,9 +1,0 @@
-#!/usr/bin/env python
-import time
-
-try:
-	for i in range(1,101):
-		print 'Number %s' %i
-		time.sleep(0.5)
-except KeyboardInterrupt:
-	print 'doing'
