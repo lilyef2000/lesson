@@ -1,0 +1,4 @@
+192.168.1.202 22    antenna SSH_KEY '/homw/antenna/.ssh/id_rsa'
+192.168.1.4   65535 root    PASSWORD 123456
+192.168.1.201 22    antenna PASSWORD 1qaz2wsx
+192.168.1.200 22    antenna PASSWORD 1qaz2wsx

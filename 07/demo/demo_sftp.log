@@ -1,0 +1,23 @@
+DEB [20160101-22:05:43.363] thr=1   paramiko.transport: starting thread (client mode): 0xb6bf718cL
+DEB [20160101-22:05:43.387] thr=1   paramiko.transport: Local version/idstring: SSH-2.0-paramiko_1.16.0
+DEB [20160101-22:05:43.535] thr=1   paramiko.transport: Remote version/idstring: SSH-2.0-OpenSSH_6.6.1p1 Ubuntu-2ubuntu2.3
+INF [20160101-22:05:43.535] thr=1   paramiko.transport: Connected (version 2.0, client OpenSSH_6.6.1p1)
+DEB [20160101-22:05:43.557] thr=1   paramiko.transport: kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1', u'diffie-hellman-group1-sha1'] server key:[u'ssh-rsa', u'ssh-dss', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] client mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] server mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+DEB [20160101-22:05:43.557] thr=1   paramiko.transport: Kex agreed: diffie-hellman-group1-sha1
+DEB [20160101-22:05:43.557] thr=1   paramiko.transport: Cipher agreed: aes128-ctr
+DEB [20160101-22:05:43.557] thr=1   paramiko.transport: MAC agreed: hmac-sha2-256
+DEB [20160101-22:05:43.558] thr=1   paramiko.transport: Compression agreed: none
+DEB [20160101-22:05:43.677] thr=1   paramiko.transport: kex engine KexGroup1 specified hash_algo <built-in function openssl_sha1>
+DEB [20160101-22:05:43.678] thr=1   paramiko.transport: Switch to new keys ...
+DEB [20160101-22:05:43.698] thr=2   paramiko.transport: Attempting GSS-API auth... (gssapi-with-mic)
+DEB [20160101-22:05:43.714] thr=1   paramiko.transport: userauth is OK
+ERR [20160101-22:05:43.714] thr=1   paramiko.transport: Unknown exception: Unable to import a GSS-API / SSPI module!
+ERR [20160101-22:05:43.722] thr=1   paramiko.transport: Traceback (most recent call last):
+ERR [20160101-22:05:43.722] thr=1   paramiko.transport:   File "/usr/local/lib/python2.7/dist-packages/paramiko/transport.py", line 1761, in run
+ERR [20160101-22:05:43.722] thr=1   paramiko.transport:     self.auth_handler._handler_table[ptype](self.auth_handler, m)
+ERR [20160101-22:05:43.722] thr=1   paramiko.transport:   File "/usr/local/lib/python2.7/dist-packages/paramiko/auth_handler.py", line 247, in _parse_service_accept
+ERR [20160101-22:05:43.723] thr=1   paramiko.transport:     sshgss = GSSAuth(self.auth_method, self.gss_deleg_creds)
+ERR [20160101-22:05:43.723] thr=1   paramiko.transport:   File "/usr/local/lib/python2.7/dist-packages/paramiko/ssh_gss.py", line 106, in GSSAuth
+ERR [20160101-22:05:43.723] thr=1   paramiko.transport:     raise ImportError("Unable to import a GSS-API / SSPI module!")
+ERR [20160101-22:05:43.723] thr=1   paramiko.transport: ImportError: Unable to import a GSS-API / SSPI module!
+ERR [20160101-22:05:43.723] thr=1   paramiko.transport: 
